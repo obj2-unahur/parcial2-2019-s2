@@ -16,15 +16,16 @@ public class AstilleroTest {
 
     @BeforeMethod
     public void setUp() {
-        Mayor velaMayor = new Mayor();
-        Spinaker velaSpinaker = new Spinaker();
-        Genaker velaGenaker = new Genaker();
+        Vela velaMayor = new Mayor();
+        Vela velaSpinaker = new Spinaker();
+        Vela velaGenaker = new Genaker();
+        Vela velaGenova = new GenovaAdapter(new Genova());
         velas = new ArrayList<>();
         velas.add(velaMayor);
         velas.add(velaSpinaker);
         velas.add(velaGenaker);
         astillero = new Astillero();
-        //velas.add(motorExperimental); NO compila,
+        velas.add(velaGenova);
     }
 
     @Test

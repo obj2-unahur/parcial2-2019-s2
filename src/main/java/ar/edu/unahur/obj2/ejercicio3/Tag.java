@@ -11,4 +11,8 @@ public class Tag  extends Nodo {
     public String valor() {
         return valor;
     }
+
+    public String extraer() {
+        return valor;
+    }
 }

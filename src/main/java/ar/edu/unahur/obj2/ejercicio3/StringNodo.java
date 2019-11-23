@@ -8,7 +8,8 @@ public class StringNodo extends Nodo {
         this.texto = texto;
     }
 
-    public String texto() {
+    public String extraer() {
         return texto;
     }
+
 }

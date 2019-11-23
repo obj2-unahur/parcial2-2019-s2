@@ -1,53 +1,20 @@
 package ar.edu.unahur.obj2.ejercicio1;
 
 
+import java.util.List;
+
 public class Carrera {
 
-    String nombre;
+    private String nombre;
+    private List<Materia> materias;
 
-    private Intro intro;
-    private Matematica matematica;
-    private EstructuraDeDatos estructuraDeDatos;
-    private ObjetosI objetosI;
-    //TODO faltan agregar 20  materias
-
-    public Carrera(String nombre, Intro intro, Matematica matematica, EstructuraDeDatos estructuraDeDatos, ObjetosI objetosI) {
+    public Carrera(String nombre, List<Materia> materias) {
         this.nombre = nombre;
-        this.intro = intro;
-        this.matematica = matematica;
-        this.estructuraDeDatos = estructuraDeDatos;
-        this.objetosI = objetosI;
+        this.materias = materias;
     }
 
     public int cargaHoraria() {
-        int horasTotales = 0;
-
-        if (intro.anual()) {
-            horasTotales+=intro.horasSemanales()*17*2;
-        } else {
-            horasTotales+=intro.horasSemanales()*17;
-        }
-
-        if (matematica.cuatrimestral()) {
-            horasTotales+=matematica.horasSemanales()*17;
-        } else {
-            horasTotales+=matematica.horasSemanales()*17*2;
-        }
-
-        if (estructuraDeDatos.semestral()) {
-            horasTotales+=estructuraDeDatos.horas()*17;
-        } else {
-            horasTotales+=estructuraDeDatos.horas()*17*2;
-        }
-
-        if (objetosI.cuatrimestral()) {
-            horasTotales+=objetosI.horasSemanales()*17;
-        } else {
-            horasTotales+=objetosI.horasSemanales()*17*2;
-        }
-
-
-        return horasTotales;
+        return materias.stream().mapToInt(materia -> materia.cantidadDeHoras()).sum();
     }
 
 

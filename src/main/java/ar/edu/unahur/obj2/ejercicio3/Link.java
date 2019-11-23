@@ -11,4 +11,8 @@ public class Link extends Nodo {
     public String etiqueta() {
         return etiqueta;
     }
+
+    public String extraer() {
+        return etiqueta;
+    }
 }

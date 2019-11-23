@@ -8,6 +8,10 @@ public class Genova  {
     private long area;
     private boolean enrollada;
 
+    public void setEnrollada(boolean enrollada) {
+        this.enrollada = enrollada;
+    }
+
     public void enrollar(long area) {
         this.area +=area;
     }
