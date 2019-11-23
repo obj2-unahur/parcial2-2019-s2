@@ -16,7 +16,7 @@ public class EnvioYaTest {
 
     @Test
     public void testCalculoCostoEnvio() {
-        double costo = envioYa.calculoCostoEnvio(TipoEnvio.Normal, TipoPaquete.Chico, 100 );
-        assertEquals(costo, 100000.0);
+        double costo = envioYa.calculoCostoEnvio(new Normal(new Chico()),100 );
+        assertEquals(costo, 100100.0);
     }
 }
