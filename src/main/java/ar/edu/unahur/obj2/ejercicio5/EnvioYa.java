@@ -14,7 +14,7 @@ public class EnvioYa {
             costoTotal +=  Math.pow(kms, 3)*1000;
         }
 
-        return costoTotal;
+        return ponderarTamañoPaquete(tipoPaquete, costoTotal);
     }
 
     private double ponderarTamañoPaquete(TipoPaquete tipoPaquete, double actual) {
